@@ -1,0 +1,55 @@
+{% extends "../base.html" %} {% block content %}
+<main class="container-sm my-5">
+  <div class="row">
+    <div class="col">
+      <h2>Pagos realizados</h2>
+      <hr>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Servicio</th>
+            <th scope="col">Fecha Pago</th>
+            <th scope="col">Monto</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for service in results %}
+            <tr>
+              <th scope="row">{{ service.id }}</th>
+              <td>{{ service.name }}</td>
+              <td>{{ service.price }}</td>
+              <td>{{ service.date }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>Pagos vencidos</h2>
+      <hr>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Servicio</th>
+            <th scope="col">Fecha Pago</th>
+            <th scope="col">Monto</th>
+            <th scope="col">Penalidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for service in results %}
+            <tr>
+              <th scope="row">{{ service.id }}</th>
+              <td>{{ service.name }}</td>
+              <td>{{ service.price }}</td>
+              <td>{{ service.date }}</td>
+              <!--<td>{{ service.penalty }}</td>-->
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+{% endblock %}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Renato Monroy">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <title>VentasRapidas.pe</title>
+  {% load static %}
+  <style>
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url('{% static "assets/hero.jpeg" %}');
+      height: 100vh;
+    }
+
+    .hero-box {
+      margin-bottom: 3rem;
+    }
+
+    .hero-box h1 {
+      color: var(--bs-gray-100);
+      text-shadow: 1px 2px var(--bs-dark);
+    }
+
+    .hero-box p {
+      color: var(--bs-gray-100);
+      text-shadow: 1px 2px var(--bs-dark);
+    }
+
+    .pic {
+      width: 80%;
+      aspect-ratio: 1/1;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article class="hero">
+      <div class="hero-box">
+        <h1>Bienvenido a VentasRapidas</h1>
+        <p>¿Se te perdieron las boletas? VentasRapidas es un servivio que administra tus pagos</p>
+        <div class="d-flex gap-2 justify-content-end">
+          <a class="btn btn-primary px-4" href="{% url 'login' %}">Ya tengo una cuenta</a>
+          <a class="btn btn-success px-4" href="{% url 'register' %}">Deseo registrarme</a>
+        </div>
+      </div>
+    </article>
+    <article class="container-sm d-flex flex-column gap-5 my-5 py-5">
+      <section class="row gap-5 my-5 justify-content-center">
+        <div class="col-2 d-flex align-items-center justify-content-center">
+          <img src="{% static 'assets/data.png' %}" alt="item" class="rounded img-fluid pic">
+        </div>
+        <div class="col-8">
+          <h4>Guarda tu informacion en un lugar seguro</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, deserunt illo vel excepturi, libero vero eveniet voluptatem alias numquam vitae temporibus id iusto totam maiores veritatis quidem accusamus optio harum?
+          Saepe architecto autem nostrum porro quibusdam labore numquam cumque itaque iure necessitatibus tempore, quisquam voluptates laboriosam aliquid eos rerum minus id excepturi. Praesentium ut magnam molestiae provident cumque illo necessitatibus.
+          Veniam quo deserunt et ducimus iste. Architecto excepturi sunt repudiandae ad recusandae molestiae perspiciatis aspernatur eaque molestias! Accusamus voluptate sint magnam! Voluptates sequi facilis necessitatibus sed! Culpa necessitatibus adipisci pariatur.</p>
+        </div>
+      </section>
+      <section class="row gap-5 my-5 justify-content-center">
+        <div class="col-2 d-flex align-items-center justify-content-center">
+          <img src="{% static 'assets/coupon.png' %}" alt="item" class="rounded img-fluid pic">
+        </div>
+        <div class="col-8">
+          <h4>Recibe cupones gratis</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, deserunt illo vel excepturi, libero vero eveniet voluptatem alias numquam vitae temporibus id iusto totam maiores veritatis quidem accusamus optio harum?
+            Saepe architecto autem nostrum porro quibusdam labore numquam cumque itaque iure necessitatibus tempore, quisquam voluptates laboriosam aliquid eos rerum minus id excepturi. Praesentium ut magnam molestiae provident cumque illo necessitatibus.
+            Veniam quo deserunt et ducimus iste. Architecto excepturi sunt repudiandae ad recusandae molestiae perspiciatis aspernatur eaque molestias! Accusamus voluptate sint magnam! Voluptates sequi facilis necessitatibus sed! Culpa necessitatibus adipisci pariatur.</p>  
+        </div>
+      </section>
+      <section class="row gap-5 my-5 justify-content-center">
+        <div class="col-2 d-flex align-items-center justify-content-center">
+          <img src="{% static 'assets/savings.png' %}" alt="item" class="rounded img-fluid pic">
+        </div>
+        <div class="col-8">
+          <h4>Controla tus presupuestos, conoce donde es mas barato</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, deserunt illo vel excepturi, libero vero eveniet voluptatem alias numquam vitae temporibus id iusto totam maiores veritatis quidem accusamus optio harum?
+            Saepe architecto autem nostrum porro quibusdam labore numquam cumque itaque iure necessitatibus tempore, quisquam voluptates laboriosam aliquid eos rerum minus id excepturi. Praesentium ut magnam molestiae provident cumque illo necessitatibus.
+            Veniam quo deserunt et ducimus iste. Architecto excepturi sunt repudiandae ad recusandae molestiae perspiciatis aspernatur eaque molestias! Accusamus voluptate sint magnam! Voluptates sequi facilis necessitatibus sed! Culpa necessitatibus adipisci pariatur.</p>
+        </div>
+      </section>
+    </article>
+  </main>
+  <footer class="container-fluid bg-body-tertiary py-3">
+    <nav class="navbar d-flex flex-column justify-content-center">
+      <ul class="navbar-nav d-flex flex-row gap-5">
+        <li class="nav-item"><a class="nav-link" href="https://github.com/rdev32">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'terms' %}">Terminos & Condiciones</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'schema-swagger-ui' %}">API</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'privacy' %}">Privacidad</a></li>
+      </ul>
+    </nav>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>

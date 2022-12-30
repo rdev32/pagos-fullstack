@@ -1,0 +1,30 @@
+{% extends "../base.html" %} {% block content %}
+<main class="container-sm my-5">
+  <div class="row mt-3">
+    <div class="col">
+      <h2>Añadir nuevo pago</h2>
+      <hr>
+      <form>
+        <div class="form-group my-3">
+          <label for="date">Fecha de vencimiento</label>
+          <input type="date" class="form-control" id="date" placeholder="Fecha de vencimiento">
+        </div>
+        <div class="form-group my-3">
+          <label for="prefix">Prefijo</label>
+          <select name="prefix" id="prefix">
+            <option value="1">Servicio 1</option>
+            <option value="2">Servicio 2</option>
+            <option value="3">Servicio 3</option>
+          </select>
+        </div>
+        <div class="form-group my-3">
+          <label for="ammount">Monto</label>
+          <input type="ammount" class="form-control" id="ammount" placeholder="URL del logo">
+        </div>
+        <button type="submit" class="btn btn-primary">Añadir</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
